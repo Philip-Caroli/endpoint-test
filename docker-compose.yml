@@ -2,6 +2,8 @@ version: '3'
 services:
   web:
     build: .
+    volumes:
+      - ./log:/log
     ports:
      - "10126:10126"
     environment:
