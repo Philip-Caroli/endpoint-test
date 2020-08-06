@@ -1,0 +1,17 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+     - "10126:10126"
+    environment:
+      - VIRTUAL_HOST=endpoint-test.caroli.cc
+      - VIRTUAL_NETWORK=nginx-proxy
+      - VIRTUAL_PORT=10126
+      - LETSENCRYPT_HOST=endpoint-test.caroli.cc
+      - LETSENCRYPT_EMAIL=philip@caroli.de
+
+networks:
+  default:
+    external:
+      name: webproxy
